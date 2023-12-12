@@ -2,21 +2,20 @@ from flask import Flask, render_template
 import firebase_admin
 from firebase_admin import credentials, db, storage
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 cred = credentials.Certificate("soap-df2ab-firebase-adminsdk-u7cvg-1f48e561a6.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://soap-df2ab-default-rtdb.asia-southeast1.firebasedatabase.app/',
-    'storageBucket': 'gs://soap-df2ab.appspot.com'
+    'storageBucket': 'soap-df2ab.appspot.com'
 })
+
 bucket = storage.bucket()
 
 
 @app.route('/')
 def DisplayImage():
-    blob = bucket.blob('Food/cutoiyen.jpg')
-    image_url = blob.generate_signed_url(expiration=3600)
-    return render_template('index.html', image_url=image_url)
-
+    image_url = 'https://firebasestorage.googleapis.com/v0/b/soap-df2ab.appspot.com/o/Food%2Fcutoiyen.jpg?alt=media&token=45f8e284-c6c3-4c4b-8302-02795ffde444'
+    return render_template('index.html',image_url = image_url)
 
 @app.route('/menu')
 def retrieve_Menu():

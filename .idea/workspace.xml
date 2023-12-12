@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;app.py">
-      <change afterPath="$PROJECT_DIR$/soap-df2ab-firebase-adminsdk-u7cvg-1f48e561a6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flaskProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flaskProject.iml" afterDir="false" />
+    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="Add realtime database and testing firebase storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,7 @@
       <workItem from="1701765730350" duration="4669000" />
       <workItem from="1702003387974" duration="1323000" />
       <workItem from="1702005684651" duration="7361000" />
-      <workItem from="1702360580558" duration="351000" />
+      <workItem from="1702360580558" duration="3255000" />
     </task>
     <task id="LOCAL-00001" summary="Add app.route for each api">
       <option name="closed" value="true" />
@@ -130,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701767070792</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add realtime database and testing firebase storage">
+      <option name="closed" value="true" />
+      <created>1702360975464</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702360975464</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,9 +156,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add app.route for each api" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;app.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;app.py" />
+    <MESSAGE value="Add realtime database and testing firebase storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add realtime database and testing firebase storage" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1702022915591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1702363511430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
