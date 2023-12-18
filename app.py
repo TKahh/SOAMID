@@ -1,3 +1,5 @@
+import datetime
+
 from flask import Flask, render_template
 import firebase_admin
 from firebase_admin import credentials, db, storage
@@ -15,12 +17,19 @@ bucket = storage.bucket()
 @app.route('/')
 def DisplayImage():
     image_url = 'https://firebasestorage.googleapis.com/v0/b/soap-df2ab.appspot.com/o/Food%2Fcutoiyen.jpg?alt=media&token=45f8e284-c6c3-4c4b-8302-02795ffde444'
-    return render_template('index.html',image_url = image_url)
+    return render_template('index.html', image_url=image_url)
 
+#return stri
 @app.route('/menu')
 def retrieve_Menu():
-    menu = db.reference('Menu').get()
-    return str(menu)
+    menu = db.reference('Menu/Food').get(shallow = True)
+    menu = sorted(menu.items() ,key=lambda x: x[0])
+    blobs = bucket.list_blobs(prefix='Food/')
+    urls = []
+    for blob in blobs:
+        url = blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET')
+        urls.append(url)
+    return  render_template('index.html',menu = menu,urls =urls)
 
 
 @app.route('/Table/NewTable')
