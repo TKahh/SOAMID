@@ -16,42 +16,14 @@ bucket = storage.bucket()
 
 @app.route('/')
 def retrieve_Menu():
-    menu_top3_ref = db.reference("Menu/Food")
-    menu_top3_snapshot = menu_top3_ref.order_by_key().limit_to_first(3).get()
-    menu_top3 = []
-    for key, value in menu_top3_snapshot.items():
-        item = {
-            'key': key,
-            'name': value.get('name', ''),
-            'image_url': value.get('image_url', '')
-        }
-        menu_top3.append(item)
-
-    urls = [get_image_url(item, bucket) for item in menu_top3]
-    print(urls)
-    return render_template('index.html', menu_top3=menu_top3, urls=urls)
-
-
-def get_image_url(menu_item, bucket):
-    image_url = menu_item.get('image_url', '')
-    if not image_url or not re.match(r'^[a-zA-Z0-9_]+$', image_url):
-        return None  # Trả về url mặc định hoặc xử lý error khác
-
-    blob_name = f"Food/{image_url}"
-
-    if bucket.blob_exists(blob_name):
-        blob = bucket.get_blob(blob_name)
-        print(f"Thành công: {blob_name}")
-        return blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET')
-    else:
-        print(f"not found: {blob_name}")
-        return None  # Trả về url mặc định hoặc xử lý error khác
-
-print(get_image_url({'image_url': 'food-1.jpg'}, bucket))
-
-
-
-
+    menu_ref = db.reference("Menu/Food").get(shallow=True)
+    menu = sorted(menu_ref.items(), key =lambda x: x[0])
+    blobs = bucket.list_blobs(prefix="Food/")
+    urls = []
+    for blob in blobs:
+        url = blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET')
+        urls.append(url)
+    return render_template('index.html', menu = menu, urls=urls)
 
 
 @app.route('/Table/NewTable')

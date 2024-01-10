@@ -29,26 +29,14 @@
                 class="nav-link-4 w-nav-link w--current">MENU</a>
         </div>
     </div>
-{# đang làm dở update data   #}
     <figure class="div-block-2">
-            <div id="contain-menu" class="w-layout-layout formenu wf-layout-layout">
-                {% for item in menu_top3 %}
-                   <div class="menu-item-{{ loop.index }}">
-                       <img src="{{ urls[item.image_url] }}">
-                       <h2>{{ item.name }}</h2>
-                       <p>{{ item.description }}</p>
-                       <span>Price: {{ item.price }}</span>
-                   </div>
-                {% endfor %}
-
-{#            <h2>...</h2> {% for item in menu[3:] %}#}
-{#                <div class="{{ item.name }}">#}
-{#                    <img src="{{ item.urls }}">#}
-{#                    <h2>{{ item.name }}</h2>#}
-{#                    <p>{{ item.description }}</p>#}
-{#                    <span>Price: {{ item.price }}</span>#}
-{#                </div>#}
-{#            {% endfor %}#}
+        <div id="contain-menu" class="w-layout-layout for menu wf-layout-layout">
+            {% for item in menu %}
+              <div class="menu-item">
+                <h3>{{ item[0] }}</h3>
+                <img src="{{ urls[loop.index] }}" alt="Menu Item Image">
+              </div>
+            {% endfor %}
         </div>
     </figure>
 {#   #}
