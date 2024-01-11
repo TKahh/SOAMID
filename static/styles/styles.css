@@ -404,6 +404,7 @@ h3 {
   margin-top: 20px;
   font-size: 24px;
   line-height: 30px;
+  text-align: center;
 }
 
 h4 {
@@ -1186,10 +1187,7 @@ textarea.w-input, textarea.w-select {
   right: -100%;
 }
 
-.w-background-video > video::-webkit-media-controls-start-playback-button {
-  -webkit-appearance: none;
-  display: none !important;
-}
+
 
 .w-background-video--control {
   background-color: rgba(0, 0, 0, 0);
@@ -2976,8 +2974,10 @@ textarea.w-input, textarea.w-select {
 }
 
 .menu-item {
-  width: 150px;
-  margin: 10px 0;
+  width: 200px;
+  margin: 10px;
+  padding-right: 10px;
+  object-fit: cover;
 }
 
 .menu-item-1 {
@@ -2990,4 +2990,10 @@ textarea.w-input, textarea.w-select {
 
 .menu-item-3 {
   grid-column: 1 / span 3;
+}
+
+.menu-item img {
+  width: 200px; /* Adjust the desired width */
+  height: 150px; /* Adjust the desired height */
+  object-fit: fill;
 }

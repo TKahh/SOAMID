@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="viewable web">
+    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="Show menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +122,8 @@
       <workItem from="1702360580558" duration="11071000" />
       <workItem from="1702653225936" duration="595000" />
       <workItem from="1704093260637" duration="535000" />
-      <workItem from="1704869983722" duration="4321000" />
+      <workItem from="1704869983722" duration="6905000" />
+      <workItem from="1704959725682" duration="1521000" />
     </task>
     <task id="LOCAL-00001" summary="Add app.route for each api">
       <option name="closed" value="true" />
@@ -165,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702912811013</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Show menu">
+      <option name="closed" value="true" />
+      <created>1704874523365</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704874523365</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,9 +196,10 @@
     <MESSAGE value="Add realtime database and testing firebase storage" />
     <MESSAGE value="fetch image sucessfully" />
     <MESSAGE value="viewable web" />
-    <option name="LAST_COMMIT_MESSAGE" value="viewable web" />
+    <MESSAGE value="Show menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show menu" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1704874179936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1704965099719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
