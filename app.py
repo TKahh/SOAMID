@@ -5,7 +5,7 @@ import firebase_admin
 from firebase_admin import credentials, db, storage
 
 app = Flask(__name__, static_folder='static')
-cred = credentials.Certificate("D:/SOAMID/soap-df2ab-firebase-adminsdk-u7cvg-1f48e561a6.json")
+cred = credentials.Certificate("soap-df2ab-firebase-adminsdk-u7cvg-1f48e561a6.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://soap-df2ab-default-rtdb.asia-southeast1.firebasedatabase.app/',
     'storageBucket': 'soap-df2ab.appspot.com'
