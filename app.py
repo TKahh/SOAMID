@@ -15,15 +15,16 @@ bucket = storage.bucket()
 
 
 @app.route('/')
-def retrieve_Menu():
+def retrieve_menu():
+    print("Inside retrieve_menu function")
     menu_ref = db.reference("Menu/Food").get(shallow=True)
-    menu = sorted(menu_ref.items(), key =lambda x: x[0])
+    menu = sorted(menu_ref.items(), key=lambda x: x[0])
     blobs = bucket.list_blobs(prefix="Food/")
     urls = []
     for blob in blobs:
         url = blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET')
         urls.append(url)
-    return render_template('index.html', menu = menu, urls=urls)
+    return render_template('index.html', menu=menu, urls=urls)
 
 
 @app.route('/Table/NewTable')
@@ -77,4 +78,5 @@ def Ing_Check():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
+
