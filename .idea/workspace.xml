@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="fix path to .json">
+    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="delete some">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +135,7 @@
       <workItem from="1709307182801" duration="8000" />
       <workItem from="1709819028795" duration="263000" />
       <workItem from="1709819429022" duration="8000" />
-      <workItem from="1709819548023" duration="8465000" />
+      <workItem from="1709819548023" duration="8947000" />
     </task>
     <task id="LOCAL-00001" summary="Add app.route for each api">
       <option name="closed" value="true" />
@@ -203,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706276902963</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="delete some">
+      <option name="closed" value="true" />
+      <created>1709828998557</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709828998557</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,9 +235,10 @@
     <MESSAGE value="Show menu" />
     <MESSAGE value="fix texts and pictures size" />
     <MESSAGE value="fix path to .json" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix path to .json" />
+    <MESSAGE value="delete some" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete some" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1709828644097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1709829102868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
