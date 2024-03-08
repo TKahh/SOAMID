@@ -55,6 +55,7 @@ html {
 
 body {
   min-height: 100%;
+  width: 100%;
   color: #333;
   background-color: #fff;
   margin: 0;
@@ -338,6 +339,7 @@ ul, ol {
 
 
 .body-2 {
+  width: 100%;
   color: #191818;
   text-decoration: none;
 }
@@ -445,12 +447,46 @@ ul, ol {
   width: 200px; /* Adjust the desired width */
   height: 150px; /* Adjust the desired height */
   object-fit: fill;
+  margin-bottom: 10px;
 }
 
-.order-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer
+/*.order-button {*/
+/*  padding: 10px 20px;*/
+/*  background-color: #4CAF50;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  cursor: pointer;*/
+/*  text-decoration: none;*/
+/*  margin-top: 18px;*/
+/*}*/
+
+
+
+.menu-item-content {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.add-to-cart {
+  cursor: pointer;
+  font-size: 15px;
+  color: #051805;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #051805; /* Add a border to the plus button */
+  border-radius: 1px;
+}
+
+.add-to-cart:hover {
+  background: bisque;
+}
+
+.btn {
+  margin-top: 12px;
 }
