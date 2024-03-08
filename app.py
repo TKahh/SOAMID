@@ -1,7 +1,9 @@
 import datetime
 import re
+import uuid
+
 from flask import Flask, render_template
-from flask import request, jsonify, session
+from flask import request, jsonify, session, redirect, url_for
 from flask_session import Session
 import firebase_admin
 from firebase_admin import credentials, db, storage
@@ -17,7 +19,7 @@ firebase_admin.initialize_app(cred, {
 })
 
 bucket = storage.bucket()
-
+start_order_id = 100
 
 @app.route('/')
 def retrieve_menu():
@@ -122,14 +124,37 @@ def change_Table():
     return 0
 
 
-@app.route('/Orders/PlaceOrder')
+@app.route('/Orders/PlaceOrder', methods = ['POST'])
 def place_Order():
-    return 0
+    global start_order_id
+    cart_items = session.get('cart', {})
+
+    item_names = list(cart_items.keys())
+    order_id = start_order_id
+    start_order_id += 1
+    order_time = datetime.datetime.now().strftime('%d-%m-%Y %H:%M:$S')
+    order_data = {
+        'id': order_id,
+        'items': item_names,
+        'ordertime': order_time
+    }
+
+    orders_ref = db.reference('Orders')
+    orders_ref.child(str(order_id)).set(order_data)
+
+    session.pop('cart', None)
+
+    return redirect(url_for('order_Confirmation',order_id = order_id))
 
 
-@app.route('/Orders/Confirmation')
-def order_Confirmation():
-    return 0
+@app.route('/Orders/Confirmation/<order_id>')
+def order_Confirmation(order_id):
+    order_ref = db.reference('Orders').child(order_id)
+    order_data = order_ref.get()
+    if order_data:
+        return render_template('confirmation.html', order = order_data)
+    else:
+        return render_template('error.html', message = 'Order not found')
 
 
 @app.route('/Orders/Update')
