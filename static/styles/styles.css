@@ -473,20 +473,21 @@ ul, ol {
 
 .add-to-cart {
   cursor: pointer;
-  font-size: 15px;
-  color: #051805;
+  color: #f57777;
   position: absolute;
   top: 0;
   right: 0;
-  background: white;
-  border: 1px solid #051805; /* Add a border to the plus button */
-  border-radius: 1px;
 }
 
 .add-to-cart:hover {
-  background: bisque;
+  color: #8c8c8c;
 }
 
 .btn {
   margin-top: 12px;
+}
+
+.item-price {
+  text-align: center;
+  font-size: 20px;
 }

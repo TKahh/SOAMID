@@ -20,6 +20,9 @@
     <script
         type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
     {% endraw %}
+
+
+
 </head>
 
 <body class="body-2">
@@ -29,11 +32,10 @@
             <div class="text-block">Korean menu</div>
             <a href="/reservation" class="nav-link-4 w-nav-link">RESERVATION</a>
             <a href="/" aria-current="page" class="nav-link-4 w-nav-link w--current">MENU</a>
-            <a id="cart-button" href="#" class="btn btn-outline-success ms-auto " data-bs-toggle="modal" data-bs-target="#cartModal">
+            <a id="cart-button" href="/cart" class="btn btn-outline-success ms-auto ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                 </svg>
-
             </a>
         </div>
     </div>
@@ -42,10 +44,15 @@
             {% for item in menu %}
               <div class="menu-item">
                 <div class="menu-item-content">
-                    <h3>{{ item[0] }}</h3>
+                    <h3>{{ item['name'] }}</h3>
                     <div class="image-container">
                         <img src="{{ urls[loop.index] }}" alt="Menu Item Image">
-                        <div class="add-to-cart" data-item="{{ item[0] }}">+</div>
+                        <div class="add-to-cart" data-item="{{ item[0] }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                              <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                            </svg>
+                        </div>
+                        <p class="item-price">{{ item['price'] }} VND</p>
                     </div>
                 </div>
               </div>

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="delete some">
+    <list default="true" id="63ee013d-dcb8-4a4f-ba0a-ed2e82d19219" name="Changes" comment="Adding item to cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
@@ -141,7 +141,7 @@
       <workItem from="1709819548023" duration="10544000" />
       <workItem from="1709830744506" duration="766000" />
       <workItem from="1709857368636" duration="609000" />
-      <workItem from="1709873404463" duration="7058000" />
+      <workItem from="1709873404463" duration="15955000" />
     </task>
     <task id="LOCAL-00001" summary="Add app.route for each api">
       <option name="closed" value="true" />
@@ -223,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709829160732</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Adding item to cart">
+      <option name="closed" value="true" />
+      <created>1709881335126</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709881335126</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,9 +258,10 @@
     <MESSAGE value="fix texts and pictures size" />
     <MESSAGE value="fix path to .json" />
     <MESSAGE value="delete some" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete some" />
+    <MESSAGE value="Adding item to cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding item to cart" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1709881073966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SOAMID$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1709889630903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

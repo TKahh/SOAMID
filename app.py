@@ -6,7 +6,7 @@ from flask_session import Session
 import firebase_admin
 from firebase_admin import credentials, db, storage
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.config['SESSION_TYPE'] = 'filesystem'
 app.secret_key = '09120125'
 Session(app)
@@ -22,18 +22,37 @@ bucket = storage.bucket()
 @app.route('/')
 def retrieve_menu():
 
-    menu_ref = db.reference("Menu/Food").get(shallow=True)
+    menu_ref = db.reference("Menu/Food").get()
     menu = sorted(menu_ref.items(), key=lambda x: x[0])
     print(menu)
     blobs = bucket.list_blobs(prefix="Food/")
     urls = []
+    # test
+
+    menu = []
+
+    for item_name, item_data in menu_ref.items():
+
+        print(f"Item Name: {item_name}, Item Data: {item_data}")
+        # Check if the 'price' field exists in the item's data
+
+        if isinstance(item_data, dict):
+            price = item_data.get('Price', 'N/A')
+        else:
+            price = 'N/A'
+
+        # Add the item's details to the menu list
+        menu.append({
+            'name': item_name,
+            'price': price
+        })
+
     for blob in blobs:
         url = blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET')
         urls.append(url)
 
-
-
     return render_template('index.html', menu=menu, urls=urls)
+
 
 @app.route('/update_cart', methods=['POST'])
 def update_cart():
@@ -51,7 +70,46 @@ def update_cart():
     print(f"Updated cart: {session['cart']}")
 
     # Return the updated cart count
-    return jsonify({'cart_count': session['cart'][item_name]})
+    return jsonify({'cart_count': session['cart'][item_name], 'item_name': item_name})
+
+
+@app.route('/cart',)
+def view_carts():
+    cart_items = session.get('cart', {})
+    items = []
+    info = []
+
+    for item_name, quantity in cart_items.items():
+        item_info = get_database(item_name)
+        if item_info:
+            items.append({
+                'name': item_name,
+                'quantity': quantity
+            })
+            info.append({
+                'name': item_name,
+                'quantity': quantity,
+                'price': item_info['price']
+            })
+        return render_template('cart.html', items=info)
+
+
+def get_database(item_name):
+    menu_ref = db.reference("Menu/Food").get()
+
+    if isinstance(menu_ref, dict) and item_name in menu_ref:
+        item_data = menu_ref[item_name]
+        if isinstance(item_data, dict):
+            price = item_data.get('Price', 'N/A')
+        else:
+            price = 'N/A'
+
+        return {
+            'name': item_name,
+            'price': price
+        }
+    return {}
+
 
 
 @app.route('/Table/NewTable')

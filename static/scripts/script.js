@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function (){
                     let cartCountSpan = document.createElement('span');
                     cartCountSpan.innerText = data.cart_count;
                     cartButton.appendChild(cartCountSpan);
+
+                    session = data.session;
                 }
             })
             .catch(error => {
