@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+</head>
+<body>
+   <h1>Your Shopping Cart</h1>
+
+    {% for item in items %}
+        <div class="cart-item">
+            <h3>{{ item.name }}</h3>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: {{ item.price }}</p>
+        </div>
+    {% endfor %}
+
+    <a href="/">Back to Menu</a>
+</body>
+</html>
